@@ -113,21 +113,8 @@
           let resultDiv = document.getElementById("result");
           resultDiv.innerHTML = "<p class='text-gray-700'>Checking...</p>";
 
-          //const result = await fetchAirdropData(walletAddress);
-          const result = {
-            result: {
-              data: {
-                epoch6_tier9_sybil: 0.28,
-                epoch2_tier8_sybil: 0.86,
-                epoch4_tier3_sybil: 0.66,
-                epoch5_tier9_sybil: 0.19,
-                closedalpha_tier2_sybil: 148.81,
-                epoch3_tier3_sybil: 1.6,
-                epoch1_tier1_sybil: 382.45,
-                epoch7_tier9_sybil: 0.33,
-              },
-            },
-          };
+          const result = await fetchAirdropData(walletAddress);
+
           resultDiv.innerHTML = "";
 
           if (result.result && result.result.data) {
