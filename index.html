@@ -26,7 +26,7 @@
         let parts = key.split("_");
         let epoch = parts[0] ? parts[0].replace("epoch", "Epoch ") : "N/A";
         let tier = parts[1] ? parts[1].replace("tier", "Tier ") : "N/A";
-        let sybil = parts[2] ? parts[2].replace("sybil", "Yes") : "No";
+        let sybil = parts[2] ? parts[2].replace("sybil", "Yes").replace("user", "No") : "No";
 
         if (epoch === "closedalpha") {
           epoch = "Closed Alpha";
@@ -114,6 +114,7 @@
           resultDiv.innerHTML = "<p class='text-gray-700'>Checking...</p>";
 
           const result = await fetchAirdropData(walletAddress);
+
 
           resultDiv.innerHTML = "";
 
